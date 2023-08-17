@@ -7,3 +7,11 @@
   /* 평소에는 숨겨지게 하는 법 */
   display: none;
 }
+
+.list-group {
+  display: none;
+}
+
+.show {
+  display: block;
+}
