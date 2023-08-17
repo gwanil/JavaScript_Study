@@ -30,7 +30,31 @@
       <li class="list-group-item">And a fifth one</li>
     </ul>
 
+    <p class="hello">안녕</p>
+    <p class="hello">안녕</p>
+    <p class="hello">안녕</p>
+    <button id="test-btn">버튼</button>
+    <button id="login-btn">로그인</button>
+
+    <!-- jquery 스크립트 (모든 라이브러리는 boby 태그 아래에 모아두는게 좋음 하지만 jQuery는 이상하게 설치한곳 하단에서만 문법 사용이 가능함 ) -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+
     <script>
+      // document.querySelector('.hello').innerHTML = '바보';
+
+      // jQuery 사용
+      $('.hello').html('바보');
+      $('.hello').css('color', 'red');
+      // addEventListener 대신 on, display : none 대신 hide
+      $('#test-btn').on('click', function () {
+        // $('.hello').hide();
+        $('.hello').slideUp();
+      });
+
       // document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', function () {
       //   document.getElementsByClassName('list-group')[0].classList.toggle('show');
       // });
@@ -59,8 +83,12 @@
       // document.getElementById('hello').style.fontSize = '16px';
 
       // addEventListener 사용법
-      document.getElementById('close').addEventListener('click', function () {
-        document.getElementById('alert').style.display = 'none';
+      // document.getElementById('close').addEventListener('click', function () {
+      //   document.getElementById('alert').style.display = 'none';
+      // });
+
+      document.querySelector('#close').addEventListener('click', function () {
+        document.querySelector('#alert').style.display = 'none';
       });
 
       // 파라미터 만들기 (함수여러개를 하나로 통합)
@@ -69,8 +97,11 @@
       }
 
       function Alert(a, b) {
-        document.getElementById('alert').style.display = a;
-        document.getElementsByClassName('title')[0].innerHTML = b;
+        // document.getElementById('alert').style.display = a;
+        // document.getElementsByClassName('title')[0].innerHTML = b;
+
+        document.querySelector('#alert').style.display = a;
+        document.querySelector('.title').innerHTML = b;
       }
 
       // 긴 코드 짧게 쓰기 (축약) + 긴 코드 재사용이 잦을 때도 편리
@@ -79,6 +110,7 @@
       // }
     </script>
 
+    <!-- bootstrap js 스크립트 -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
