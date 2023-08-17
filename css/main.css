@@ -42,3 +42,7 @@
   visibility: visible;
   opacity: 1;
 }
+
+.down-modal {
+  display: none;
+}

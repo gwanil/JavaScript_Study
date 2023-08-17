@@ -69,7 +69,7 @@
       });
 
       $('#close').on('click', function () {
-        $('.black-bg').hide();
+        $('.black-bg').addClass('down-modal');
       });
 
       // document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', function () {
@@ -104,7 +104,7 @@
       //   document.getElementById('alert').style.display = 'none';
       // });
 
-      document.querySelector('#close').addEventListener('click', function () {
+      document.querySelectorAll('#close')[1].addEventListener('click', function () {
         document.querySelector('#alert').style.display = 'none';
       });
 
