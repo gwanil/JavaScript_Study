@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
+    <!-- 모달창 디자인 -->
+    <div class="black-bg login-modal">
+      <div class="white-bg">
+        <h4>로그인하세요</h4>
+        <button class="btn btn-danger" id="close">닫기</button>
+      </div>
+    </div>
+
     <!-- bootstrap 사용 -->
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
@@ -53,6 +61,11 @@
       $('#test-btn').on('click', function () {
         // $('.hello').hide();
         $('.hello').slideUp();
+      });
+
+      $('#login-btn').on('click', function () {
+        $('.login-modal').show();
+        $('.close').hide();
       });
 
       // document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', function () {
