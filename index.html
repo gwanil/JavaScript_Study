@@ -3,15 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
-    <h1 id="hello">안녕하세요</h1>
-    <h1 id="hi">JS 초보에요</h1>
+    <!-- <h1 id="hello">안녕하세요</h1> -->
+    <!-- <h1 id="hi">JS 초보에요</h1> -->
+
+    <!-- alert 박스와 기능 만들기 -->
+    <div class="alert-box" id="alert">
+      알림창임
+      <button onclick="document.getElementById('alert').style.display='none';">닫기</button>
+    </div>
+    <button onclick="document.getElementById('alert').style.display='block';">버튼</button>
 
     <!-- 자바스크립트 작성 -->
-    <script>
+    <!-- <script>
       document.getElementById('hello').innerHTML = '안녕';
       document.getElementById('hi').innerHTML = 'JS 고수에요';
-    </script>
+      document.getElementById('hello').style.fontSize = '16px';
+    </script> -->
   </body>
 </html>

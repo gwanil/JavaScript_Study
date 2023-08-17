@@ -1,0 +1,9 @@
+.alert-box {
+  background-color: skyblue;
+  padding: 20px;
+  color: white;
+  border-radius: 5px;
+
+  /* 평소에는 숨겨지게 하는 법 */
+  display: none;
+}
