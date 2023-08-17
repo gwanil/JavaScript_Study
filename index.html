@@ -13,7 +13,8 @@
   </head>
   <body>
     <!-- 모달창 디자인 -->
-    <div class="black-bg login-modal">
+    <!-- one-way UI 만들기 1.시작스타일 2.최종스타일 3.원할때 최종스타일로 변화 4.transition추가-->
+    <div class="black-bg">
       <div class="white-bg">
         <h4>로그인하세요</h4>
         <button class="btn btn-danger" id="close">닫기</button>
@@ -64,8 +65,11 @@
       });
 
       $('#login-btn').on('click', function () {
-        $('.login-modal').show();
-        $('.close').hide();
+        $('.black-bg').addClass('show-modal');
+      });
+
+      $('#close').on('click', function () {
+        $('.black-bg').hide();
       });
 
       // document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', function () {

@@ -23,6 +23,12 @@
   background: rgba(0, 0, 0, 0.5);
   z-index: 5;
   padding: 30px;
+  /* display: none; */
+  /* display: none; 은 아예 숨김 애니매이션 쓸 때는 아래 */
+  visibility: hidden;
+  /* 투명도 */
+  opacity: 0;
+  transition: all 1s;
 }
 
 .white-bg {
@@ -31,6 +37,8 @@
   padding: 30px;
 }
 
-.login-modal {
-  display: none;
+.show-modal {
+  /* display: block; */
+  visibility: visible;
+  opacity: 1;
 }
