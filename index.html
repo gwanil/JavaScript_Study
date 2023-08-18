@@ -28,7 +28,7 @@
             <input type="text" class="form-control" id="email" />
           </div>
           <div class="my-3">
-            <input type="password" class="form-control" />
+            <input type="password" class="form-control" id="passwd" />
           </div>
           <button type="submit" class="btn btn-primary" id="send">전송</button>
           <button type="button" class="btn btn-danger" id="close">닫기</button>
@@ -68,10 +68,23 @@
       // });
 
       // $('#send').on('click', function(){
+      // $('form').on('submit', function (e) {
+      //   if (document.getElementById('email').value == '') {
+      //     alert('아이디입력안함');
+      //     // form 전송 막음
+      //     e.preventDefault();
+      //   }
+      // });
+
       $('form').on('submit', function (e) {
         if (document.getElementById('email').value == '') {
-          alert('아이디입력안함');
-          // form 전송 막음
+          alert('아이디를 입력해주세요');
+          e.preventDefault();
+        } else if (document.getElementById('passwd').value == '') {
+          alert('비밀번호를 입력해주세요');
+          e.preventDefault();
+        } else if (document.getElementById('passwd').value.length < 6) {
+          alert('비밀번호가 짧습니다');
           e.preventDefault();
         }
       });
