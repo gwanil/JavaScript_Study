@@ -37,6 +37,12 @@
       // } else {
       //   console.log('안녕2');
       // }
+
+      document.querySelector('#send').addEventListener('click', function () {
+        if (document.getElementsByClassName('form-control')[0].value == '') {
+          alert('안녕하세요');
+        }
+      });
     </script>
     <!-- bootstrap 사용 -->
     <nav class="navbar navbar-light bg-light">
