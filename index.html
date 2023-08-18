@@ -219,7 +219,11 @@
 
       $('.badge').on('click', function () {
         count++;
-        console.log('count');
+        if (count % 2 == 0) {
+          $('.badge').css('color', 'dark');
+        } else {
+          $('.badge').css('color', 'white');
+        }
       });
     </script>
 
