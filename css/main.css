@@ -46,3 +46,8 @@
 .down-modal {
   display: none;
 }
+
+.main-bg {
+  padding: 100px 20px;
+  background-color: lightgrey;
+}
