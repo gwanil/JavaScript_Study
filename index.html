@@ -146,10 +146,12 @@
         }
       });
     </script>
+
     <!-- bootstrap 사용 -->
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
-        <span class="navbar-brand">Navbar</span>
+        <span class="navbar-brand">GIShop</span>
+        <span class="badge bg-dark">Dark 🔄</span>
         <button class="navbar-toggler" type="button">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -207,6 +209,17 @@
       // querySelector 사용해보기
       document.querySelector('.navbar-toggler').addEventListener('click', function () {
         document.querySelector('.list-group').classList.toggle('show');
+      });
+
+      // 다크모드
+      // badge 클릭횟수가 홀수면 내부 글자를 light로 변경
+      // badge 클릭횟수가 짝수면 내부 글자를 dark로 변경
+      // var - 변수를 만들 수 있음
+      var count = 0;
+
+      $('.badge').on('click', function () {
+        count++;
+        console.log('count');
       });
     </script>
 
