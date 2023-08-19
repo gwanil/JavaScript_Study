@@ -382,12 +382,23 @@
       // }
 
       // setTimeout 타이머주는 법 숙제
-      var num3 = $('#cho').val();
+      // var num3 = $('#cho').val();
+      // setInterval(function () {
+      //   $('.alert').hide();
+      //   num3--;
+      //   $('#cho').html('num3');
+      // }, 5000);
+
+      var count = 5;
+
       setInterval(function () {
-        $('.alert').hide();
-        num3--;
-        $('#cho').html('num3');
-      }, 5000);
+        count--;
+        if (count >= 0) {
+          $('#cho').html(count);
+        } else {
+          $('.alert').hide();
+        }
+      }, 1000);
     </script>
 
     <!-- bootstrap js 스크립트 -->
