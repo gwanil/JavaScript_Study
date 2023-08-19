@@ -148,6 +148,8 @@
         } else if (/\S+@\S+.\S+/.test(입력한이메일) == false) {
           alert('이메일 형식 아닙니다');
           e.preventDefault();
+        } else if (/[A-Z]/.test(입력한비번) == false) {
+          alert('대문자가 없습니다');
         }
       });
     </script>
