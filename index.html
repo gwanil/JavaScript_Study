@@ -134,14 +134,19 @@
       // });
 
       $('form').on('submit', function (e) {
-        if (document.getElementById('email').value == '') {
+        var 입력한이메일 = document.getElementById('email').value;
+        var 입력한비번 = document.getElementById('passwd').value;
+        if (입력한이메일 == '') {
           alert('아이디를 입력해주세요');
           e.preventDefault();
-        } else if (document.getElementById('passwd').value == '') {
+        } else if (입력한비번 == '') {
           alert('비밀번호를 입력해주세요');
           e.preventDefault();
-        } else if (document.getElementById('passwd').value.length < 6) {
+        } else if (입력한비번.length < 6) {
           alert('비밀번호가 짧습니다');
+          e.preventDefault();
+        } else if (/\S+@\S+.\S+/.test(입력한이메일) == false) {
+          alert('이메일 형식 아닙니다');
           e.preventDefault();
         }
       });
