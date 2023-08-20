@@ -356,7 +356,8 @@
     <button class="slide-1">1</button>
     <button class="slide-2">2</button>
     <button class="slide-3">3</button>
-    <!-- <button>다음</button> -->
+    <button class="slide-prev">이전</button>
+    <button class="slide-next">다음</button>
 
     <!-- 자바스크립트 작성 -->
     <script>
@@ -429,6 +430,18 @@
 
       // 캐러셀(이미지 슬라이드) 만들기
       $('.slide-2').on('click', function () {
+        $('.slide-container').css('transform', 'translateX(-100vw)');
+      });
+
+      $('.slide-3').on('click', function () {
+        $('.slide-container').css('transform', 'translateX(-200vw)');
+      });
+
+      $('.slide-1').on('click', function () {
+        $('.slide-container').css('transform', 'translateX(0vw)');
+      });
+
+      $('.slide-prev').on('click', function () {
         $('.slide-container').css('transform', 'translateX(-100vw)');
       });
     </script>
