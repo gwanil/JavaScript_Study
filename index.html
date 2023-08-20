@@ -493,6 +493,36 @@
         var num3 = (a * 1.1).toFixed(1);
         return parseFloat(num3);
       }
+
+      // 함수의 return 문법 & 소수점 다루기 숙제 1
+      function ms(min, sec) {
+        // return min * 60 * 1000 + sec * 1000;
+        // return (min * 60 + sec) * 1000;
+        var result = (min * 60 + sec) * 1000;
+        return result;
+      }
+
+      console.log(ms(1, 30));
+      console.log(ms(2, 10));
+
+      // 함수의 return 문법 & 소수점 다루기 숙제 2
+      function price(a, b) {
+        //   var result = 0;
+        //   if (b == true) {
+        //     result = (a * 0.9 - 1.5).toFixed(1);
+        //   } else {
+        //     result = (a * 0.9).toFixed(1);
+        //   }
+        //   return parseFloat(result);
+        var result = a * 0.9;
+        if (b == true) {
+          result = result - 1.5;
+        }
+        return parseFloat(result.toFixed(2));
+      }
+
+      console.log(price(70, false));
+      console.log(price(10, true));
     </script>
 
     <!-- bootstrap js 스크립트 -->
