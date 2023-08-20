@@ -56,3 +56,19 @@
   background-color: black;
   color: white;
 } */
+
+.slide-container {
+  width: 300vw;
+  /* margin-left: -100vw; */
+  transition: all 1s;
+  /* transform: translateX(-100vw); */
+}
+
+.slide-box {
+  width: 100vw;
+  float: left;
+}
+
+.slide-box img {
+  width: 100%;
+}

@@ -338,6 +338,26 @@
     <!-- setTimeout 타이머주는 법 -->
     <div class="alert alert-danger"><span id="cho">5</span>초 이내 구매시 사은품 증정!</div>
 
+    <!-- 캐러셀(이미지 슬라이드) 만들기 -->
+    <div style="overflow: hidden">
+      <div class="slide-container">
+        <div class="slide-box">
+          <img src="/img/car1.png" />
+        </div>
+        <div class="slide-box">
+          <img src="/img/car2.png" />
+        </div>
+        <div class="slide-box">
+          <img src="/img/car3.png" />
+        </div>
+      </div>
+    </div>
+
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+    <!-- <button>다음</button> -->
+
     <!-- 자바스크립트 작성 -->
     <script>
       // document.getElementById('hello').innerHTML = '안녕';
@@ -406,6 +426,11 @@
           $('.alert').hide();
         }
       }, 1000);
+
+      // 캐러셀(이미지 슬라이드) 만들기
+      $('.slide-2').on('click', function () {
+        $('.slide-container').css('transform', 'translateX(-100vw)');
+      });
     </script>
 
     <!-- bootstrap js 스크립트 -->
