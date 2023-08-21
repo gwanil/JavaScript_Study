@@ -179,6 +179,9 @@
       <button id="login" class="btn btn-danger">로그인</button>
     </div>
 
+    <!-- 스크롤바로 UI 만들기 -->
+    <div style="height: 1000px"></div>
+
     <p class="hello">안녕</p>
     <p class="hello">안녕</p>
     <p class="hello">안녕</p>
@@ -321,6 +324,15 @@
         } else if (count >= 3 && 유저답 != '1335') {
           alert('멍청아');
         }
+      });
+
+      // 스크롤바로 UI 만들기
+      window.addEventListener('scroll', function () {
+        window.scrollY();
+      });
+
+      $(window).on('scroll', function () {
+        $(window).scrollTop();
       });
     </script>
 
