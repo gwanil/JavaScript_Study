@@ -157,7 +157,7 @@
     <!-- bootstrap 사용 -->
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
-        <span class="navbar-brand">GIShop</span>
+        <span class="navbar-brand">JSShop</span>
         <span class="badge bg-dark">Dark 🔄</span>
         <button class="navbar-toggler" type="button">
           <span class="navbar-toggler-icon"></span>
@@ -181,6 +181,11 @@
 
     <!-- 스크롤바로 UI 만들기 -->
     <div style="height: 1000px"></div>
+    <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nulla eligendi modi
+      consequatur aliquid iure a impedit provident numquam sit, eaque magni dignissimos esse
+      voluptatem saepe vero eius quisquam totam?
+    </div>
 
     <p class="hello">안녕</p>
     <p class="hello">안녕</p>
@@ -327,12 +332,22 @@
       });
 
       // 스크롤바로 UI 만들기
-      window.addEventListener('scroll', function () {
-        window.scrollY();
-      });
+      // window.addEventListener('scroll', function () {
+      //   window.scrollY(100);
+      // });
 
       $(window).on('scroll', function () {
         $(window).scrollTop();
+      });
+
+      // div의 스크롤바 내린 양 + 눈에 보이는 div 높이 == div의 실제높이
+      $('.lorem').on('scroll', function () {
+        var 스크롤양 = document.querySelector('.lorem').scrollTop;
+        var 실제높이 = document.querySelector('.lorem').scrollHeight;
+        var 높이 = document.querySelector('.lorem').clientHeight;
+
+        if (스크롤양 + 높이 == 실제높이) {
+        }
       });
     </script>
 
