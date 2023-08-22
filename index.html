@@ -337,16 +337,21 @@
       // });
 
       $(window).on('scroll', function () {
-        $(window).scrollTop();
+        var 스크롤양 = window.scrollY;
+
+        if (스크롤양 >= 100) {
+          $('.naver-brand').css('font-size', '10px');
+        }
       });
 
       // div의 스크롤바 내린 양 + 눈에 보이는 div 높이 == div의 실제높이
       $('.lorem').on('scroll', function () {
-        var 스크롤양 = document.querySelector('.lorem').scrollTop;
+        var 스크롤양2 = document.querySelector('.lorem').scrollTop;
         var 실제높이 = document.querySelector('.lorem').scrollHeight;
         var 높이 = document.querySelector('.lorem').clientHeight;
 
-        if (스크롤양 + 높이 == 실제높이) {
+        if (스크롤양2 + 높이 == 실제높이 - 10) {
+          alert('다 내렸음');
         }
       });
     </script>
