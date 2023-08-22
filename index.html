@@ -337,23 +337,28 @@
       // });
 
       $(window).on('scroll', function () {
-        var 스크롤양 = window.scrollY;
-
-        if (스크롤양 >= 100) {
-          $('.naver-brand').css('font-size', '10px');
+        if (window.scrollY > 100) {
+          $('.navbar-brand').css('font-size', '20px');
+        } else {
+          $('.navbar-brand').css('font-size', '30px');
         }
       });
 
       // div의 스크롤바 내린 양 + 눈에 보이는 div 높이 == div의 실제높이
       $('.lorem').on('scroll', function () {
-        var 스크롤양2 = document.querySelector('.lorem').scrollTop;
+        var 스크롤양 = document.querySelector('.lorem').scrollTop;
         var 실제높이 = document.querySelector('.lorem').scrollHeight;
         var 높이 = document.querySelector('.lorem').clientHeight;
 
-        if (스크롤양2 + 높이 == 실제높이 - 10) {
+        if (스크롤양 + 높이 > 실제높이 - 10) {
           alert('다 내렸음');
         }
       });
+
+      // 스크롤 응용 ( Body 태그 끝나기 전에 쓰는게 관습)
+      document.querySelector('html').scrollHeight; // 현재 페이지의 실제높이
+      document.querySelector('html').clientHeight; // 페이지에서 보이는 높이
+      window.scrollY; // 현재 페이지 스크롤 양
     </script>
 
     <!-- <h1 id="hello">안녕하세요</h1> -->
