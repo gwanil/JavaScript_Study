@@ -26,7 +26,7 @@
   height: 100%;
   position: fixed;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 5;
+  z-index: 6;
   padding: 30px;
   /* display: none; */
   /* display: none; 은 아예 숨김 애니매이션 쓸 때는 아래 */

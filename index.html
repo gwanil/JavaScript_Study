@@ -223,6 +223,26 @@
         $('.black-bg').addClass('down-modal');
       });
 
+      // 이벤트 버블링과 이벤트관련 함수들
+      $('.black-bg').on('click', function (e) {
+        // e.target; // 유저가 실제로 누른거
+        // e.currentTarget; // 이벤트리스너 달린 곳
+        // this;
+        // e.preventDefault(); // 이벤트 기본동작 막아줌
+        // e.stopPropagation(); // 상위요소로 이벤트 버블링 막아줌
+
+        //jQurty 는 등호비교 불가능, 비교용 함수를 써야함
+        if ($(e.target).is($('.black-bg'))) {
+          $('.black-bg').removeClass('show-modal');
+        }
+      });
+
+      // document.querySelector('.black-bg').addEventListener('click', function (e) {
+      //   if (e.target == document.querySelector('.black-bg')) {
+      //     document.querySelector('.black-bg').classList.remove('show-modal');
+      //   }
+      // });
+
       // document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', function () {
       //   document.getElementsByClassName('list-group')[0].classList.toggle('show');
       // });
