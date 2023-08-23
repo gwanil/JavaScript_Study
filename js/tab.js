@@ -6,8 +6,10 @@
 
 $('.tab-button')
   .eq(0)
-  .on('click', function () {});
+  .on('click', function () {
+    $('.tab-button').eq(0).addClass('.orange');
+  });
 
-$('.tab-button')
-  .eq(0)
-  .click(function () {});
+// $('.tab-button')
+//   .eq(0)
+//   .click(function () {});
