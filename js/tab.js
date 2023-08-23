@@ -15,7 +15,7 @@
 //   });
 
 // val로 하면 안되고 let으로 해야함
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < $('.tab-button').length; i++) {
   $('.tab-button')
     .eq(i)
     .on('click', function () {
