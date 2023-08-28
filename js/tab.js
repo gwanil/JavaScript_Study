@@ -98,7 +98,24 @@ $('.form-select')
     var value = e.currentTarget.value;
     if (value == '셔츠') {
       $('.form-select').eq(1).removeClass('size');
-    } else {
-      $('.form-select').eq(1).addClass('size');
+    } else if (value == '바지') {
+      $('.form-select').eq(1).removeClass('size');
+      // var 바지사이즈 = '<option>28</option>, <option>30</option>';
+      var 바지사이즈 = `<option>28</option> <option>30</option>`;
+      $('.form-select').eq(1).html(바지사이즈);
     }
   });
+
+// Select 2 : 자바스크립트로 html 생성하는 법
+// var a = document.createElement('p');
+// a.innerHTML = '안녕';
+// document.querySelector('#test').appendChild(a);
+
+var 템플릿 = '<p>안녕<p>';
+// 추가해주는 문법
+// document.querySelector('#test').insertAdjacentHTML('beforebegin', 템플릿);
+// $('#test').append(템플릿);
+
+// 갈아치워주는 문법
+// document.querySelector('#test').innerHTML = 템플릿;
+// $('#test').html(템플릿);
