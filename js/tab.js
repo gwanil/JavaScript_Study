@@ -93,9 +93,12 @@ $('#price').html(car2.price[0]);
 // Select 인풋 다루기
 $('.form-select')
   .eq(0)
-  .on('input', function () {
-    var value = $('.form-select').eq(0).val();
+  .on('input', function (e) {
+    // var value = $('.form-select').eq(0).val();
+    var value = e.currentTarget.value;
     if (value == '셔츠') {
       $('.form-select').eq(1).removeClass('size');
+    } else {
+      $('.form-select').eq(1).addClass('size');
     }
   });
