@@ -89,3 +89,13 @@ console.log(car2['price']);
 $('#name').html(car2.name);
 $('#price').html(car2.price[0]);
 // document.querySelector('#price').innerHTML = car2.price[0];
+
+// Select 인풋 다루기
+$('.form-select')
+  .eq(0)
+  .on('input', function () {
+    var value = $('.form-select').eq(0).val();
+    if (value == '셔츠') {
+      $('.form-select').eq(1).removeClass('size');
+    }
+  });

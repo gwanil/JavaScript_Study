@@ -136,3 +136,7 @@ ul.list::after {
 .show {
   display: block;
 }
+
+.size {
+  display: none;
+}
