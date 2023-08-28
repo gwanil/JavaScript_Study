@@ -139,3 +139,42 @@ var 템플릿 = '<p>안녕<p>';
 // 갈아치워주는 문법
 // document.querySelector('#test').innerHTML = 템플릿;
 // $('#test').html(템플릿);
+
+// Array, for 반복문 실력항상 과제 1
+var 출석부 = ['흥민', '영희', '철수', '재석', '철수'];
+
+function 이름찾기(name) {
+  for (let i = 0; i < 출석부.length; i++) {
+    if (name == 출석부[i]) {
+      console.log('있어요');
+    }
+  }
+}
+
+// Array, for 반복문 실력항상 과제 2
+for (let i = 2; i <= 9; i++) {
+  for (let j = 1; j <= 9; j++) {
+    var 답 = i * j;
+  }
+}
+
+// Array, for 반복문 실력항상 과제 3
+
+function 비교(성적1, 성적2) {
+  var result = 0;
+
+  for (let i = 0; i < 성적1.length; i++) {
+    result += 성적1[i];
+  }
+
+  var 비교 = result / 성적1.length;
+  if (비교 < 성적2) {
+    console.log(성적2);
+    console.log(비교);
+    console.log(성적2 - 비교 + '올랐음');
+  } else {
+    console.log('떨어짐 재수하셈');
+  }
+}
+
+비교([30, 50, 10], 90);
