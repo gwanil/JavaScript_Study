@@ -84,3 +84,6 @@ console.log(car2.price);
 console.log(car2['price']);
 // 수정하는 법
 // car2.price = 60000;
+
+$('#name').html(car2.name);
+$('#price').html(car2.price);
