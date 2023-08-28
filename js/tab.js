@@ -66,3 +66,21 @@ $('.list').click(function (e) {
 // for (var i = 0; i < 3; i++) {
 //   console.log('안녕');
 // }
+
+// Array 와 Object 자료형
+// var car = '소나타';
+// var carPrice = 50000;
+// var carColor = 'white';
+
+// Array 자료형
+var car = ['소나타', 50000, 'white'];
+console.log(car[0]);
+// 수정하는 방법
+// car[0] = '아반떼';
+
+// Object 자료형
+var car2 = { name: '소나타', price: 50000 };
+console.log(car2.price);
+console.log(car2['price']);
+// 수정하는 법
+// car2.price = 60000;
