@@ -79,11 +79,13 @@ console.log(car[0]);
 // car[0] = '아반떼';
 
 // Object 자료형
-var car2 = { name: '소나타', price: 50000 };
+// 약간 복잡한 Array & Object 데이터바인딩
+var car2 = { name: '소나타', price: [50000, 3000, 4000] };
 console.log(car2.price);
 console.log(car2['price']);
 // 수정하는 법
 // car2.price = 60000;
 
 $('#name').html(car2.name);
-$('#price').html(car2.price);
+$('#price').html(car2.price[0]);
+// document.querySelector('#price').innerHTML = car2.price[0];

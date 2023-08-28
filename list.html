@@ -18,32 +18,40 @@
     ></script>
   </head>
   <body>
-    <!-- Array 와 Object 자료형 -->
-    <div class="container mt-3">
-      <div class="card p-3">
-        <span id="name">상품명</span>
-        <span id="price">가격</span>
+    <div class="card-group container">
+      <div class="card">
+        <img src="https://via.placeholder.com/600" />
+        <div class="card-body">
+          <h5>Card title</h5>
+          <p>가격 : 70000</p>
+          <button class="btn btn-danger">주문하기</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/600" />
+        <div class="card-body">
+          <h5>Card title</h5>
+          <p>가격 : 70000</p>
+          <button class="btn btn-danger">주문하기</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/600" />
+        <div class="card-body">
+          <h5>Card title</h5>
+          <p>가격 : 70000</p>
+          <button class="btn btn-danger">주문하기</button>
+        </div>
       </div>
     </div>
 
-    <!-- 탭 기능 만들기 (for문) -->
-    <div class="container mt-5">
-      <ul class="list">
-        <!-- html 태그에 몰래 정보 숨기기 가능 (data-자료이름="값") -->
-        <li class="tab-button" data-id="0">Products</li>
-        <li class="tab-button orange" data-id="1">Information</li>
-        <li class="tab-button" data-id="2">Shipping</li>
-      </ul>
-      <div class="tab-content">
-        <p>상품설명입니다. Product</p>
-      </div>
-      <div class="tab-content show">
-        <p>스펙설명입니다. Information</p>
-      </div>
-      <div class="tab-content">
-        <p>배송정보입니다. Shipping</p>
-      </div>
-    </div>
+    <script>
+      var products = [
+        { id: 0, price: 70000, title: 'Blossom Dress' },
+        { id: 1, price: 50000, title: 'Springfield Shirt' },
+        { id: 2, price: 60000, title: 'Black Monastery' },
+      ];
+    </script>
 
     <!-- 자바스크립트 연동 -->
     <script src="/js/tab.js"></script>
