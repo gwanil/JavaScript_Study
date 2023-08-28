@@ -91,6 +91,11 @@ $('#price').html(car2.price[0]);
 // document.querySelector('#price').innerHTML = car2.price[0];
 
 // Select 인풋 다루기
+// Select 3 : forEach, for, in 반복문
+
+var pants = [28, 30, 32, 34];
+var shirts = [95, 100, 105];
+
 $('.form-select')
   .eq(0)
   .on('input', function (e) {
@@ -100,11 +105,26 @@ $('.form-select')
       $('.form-select').eq(1).removeClass('size');
     } else if (value == '바지') {
       $('.form-select').eq(1).removeClass('size');
+      $('.form-select').eq(1).html('');
       // var 바지사이즈 = '<option>28</option>, <option>30</option>';
-      var 바지사이즈 = `<option>28</option> <option>30</option>`;
-      $('.form-select').eq(1).html(바지사이즈);
+      // var 바지사이즈 = `<option>28</option> <option>30</option>`;
+      // $('.form-select').eq(1).append(바지사이즈);
+
+      // array에 붙일 수 있는 반복문
+      // pants.forEach(function (a) {
+      // arrow function
+      pants.forEach((a) => {
+        $('.form-select').eq(1).append(`<option>${a}</option>`);
+      });
     }
   });
+
+var obj = { name: 'kim', age: 20 };
+
+for (var key in obj) {
+  console.log(key);
+  console.log(obj[key]);
+}
 
 // Select 2 : 자바스크립트로 html 생성하는 법
 // var a = document.createElement('p');
