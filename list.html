@@ -18,7 +18,8 @@
     ></script>
   </head>
   <body>
-    <div class="card-group container">
+    <!-- 데이터바인딩 숙제 & 문자중간에 변수 넣는법 -->
+    <!-- <div class="card-group container">
       <div class="card">
         <img src="https://via.placeholder.com/600" />
         <div class="card-body">
@@ -42,30 +43,87 @@
           <p>가격 : 70000</p>
           <button class="btn btn-danger">주문하기</button>
         </div>
+      </div>
+    </div> -->
+
+    <!-- Ajax 1 : 개념정리 -->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <img src="https://via.placeholder.com/600" class="w-100" />
+          <h5>Card title</h5>
+          <p>가격 : 70000</p>
+        </div>
+        <!-- <div class="col-sm-4">
+          <img src="https://via.placeholder.com/600" class="w-100" />
+          <h5>Card title</h5>
+          <p>가격 : 70000</p>
+        </div> -->
       </div>
     </div>
-
     <script>
+      // 데이터바인딩 숙제 & 문자중간에 변수 넣는법
       var products = [
         { id: 0, price: 70000, title: 'Blossom Dress' },
         { id: 1, price: 50000, title: 'Springfield Shirt' },
         { id: 2, price: 60000, title: 'Black Monastery' },
       ];
 
-      for (let i = 0; i < products.length; i++) {
-        $('.card-body h5').eq(i).html(products[i].title);
-        $('.card-body p')
-          .eq(i)
-          .html('가격 : ' + products[i].price);
-        // $('.card-body h5').eq(1).html(products[1].title);
-        // $('.card-body p')
-        //   .eq(1)
-        //   .html('가격 : ' + products[1].price);
-        // $('.card-body h5').eq(2).html(products[2].title);
-        // $('.card-body p')
-        //   .eq(2)
-        //   .html('가격 : ' + products[2].price);
-      }
+      // for (let i = 0; i < products.length; i++) {
+      //   $('.card-body h5').eq(i).html(products[i].title);
+      //   $('.card-body p')
+      //     .eq(i)
+      //     .html('가격 : ' + products[i].price);
+      // $('.card-body h5').eq(1).html(products[1].title);
+      // $('.card-body p')
+      //   .eq(1)
+      //   .html('가격 : ' + products[1].price);
+      // $('.card-body h5').eq(2).html(products[2].title);
+      // $('.card-body p')
+      //   .eq(2)
+      //   .html('가격 : ' + products[2].price);
+      // }
+    </script>
+
+    <!-- Ajax 1 : 개념정리 -->
+    <script>
+      // $.get('https://codingapple1.github.io/hello.txt').done(function (data) {
+      //   console.log(data);
+      // });
+
+      // $.get('https://codingapple1.github.io/hello.txt213')
+      //   .done(function (data) {
+      //     console.log(data);
+      //   })
+      //   .fail(function () {
+      //     console.log('실패함');
+      //   });
+
+      // $.post('https://codingapple1.github.io/hello.txt', {name : 'kim'}).done(function (data) {
+      //   console.log(data);
+      // });
+
+      // $.get('https://codingapple1.github.io/price.json').done(function (data) {
+      //   console.log(data.price);
+      // });
+
+      // fetch('https://codingapple1.github.io/price.json')
+      //   .then((res) => res.json())
+      //   .then((data) => {
+      //     console.log(data);
+      //   })
+      //   .catch((error) => {
+      //     console.log(error);
+      //   });
+
+      // fetch('https://codingapple1.github.io/price.json')
+      //   .then((res) => res.json())
+      //   .then(function (data) {
+      //     console.log(data);
+      //   })
+      //   .catch(function (error) {
+      //     console.log('실패함');
+      //   });
     </script>
 
     <!-- bootstrap js 스크립트 -->
