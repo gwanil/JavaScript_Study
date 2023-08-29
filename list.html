@@ -100,14 +100,18 @@
       //     </div>`;
       //   $('.row').append(템플릿);
       // });
-      products.forEach((a) => {
-        var 템플릿 = `<div class="col-sm-4">
-            <img src="https://via.placeholder.com/600" class="w-100" />
-            <h5>${a.title}</h5>
-            <p>가격 : ${a.price}</p>
-            </div>`;
-        $('.row').append(템플릿);
-      });
+      function 데이터(i) {
+        i.forEach((a) => {
+          var 템플릿 = `<div class="col-sm-4">
+              <img src="https://via.placeholder.com/600" class="w-100" />
+              <h5>${a.title}</h5>
+              <p>가격 : ${a.price}</p>
+              </div>`;
+          $('.row').append(템플릿);
+        });
+      }
+
+      데이터(products);
 
       // var 템플릿 = `<div class="col-sm-4">
       //     <img src="https://via.placeholder.com/600" class="w-100" />
@@ -160,18 +164,21 @@
 
     <!-- Ajax 2 : 상품 더보기 버튼 만들기 -->
     <script>
+      var count = 0;
       $('#more').on('click', function () {
-        $.get('https://codingapple1.github.io/js/more1.json').done((data) => {
-          console.log(data);
-          data.forEach((a, i) => {
-            var 템플릿 = `<div class="col-sm-4">
-              <img src="https://via.placeholder.com/600" class="w-100" />
-              <h5>${data[i].title}</h5>
-              <p>가격 : ${data[i].price}</p>
-              </div>`;
-            $('.row').append(템플릿);
+        count++;
+        if (count == 1) {
+          $.get('https://codingapple1.github.io/js/more1.json').done((data) => {
+            console.log(data);
+            데이터(data);
           });
-        });
+        } else if (count == 2) {
+          $.get('https://codingapple1.github.io/js/more2.json').done((data2) => {
+            console.log(data2);
+            데이터(data2);
+            $('#more').css('display', 'none');
+          });
+        }
       });
     </script>
 
