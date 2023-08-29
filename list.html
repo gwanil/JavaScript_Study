@@ -66,6 +66,11 @@
     <div class="container">
       <button class="btn btn-danger" id="more">더보기</button>
     </div>
+
+    <div class="container my-3">
+      <button class="btn btn-danger" id="price">가격순정렬</button>
+    </div>
+
     <script>
       // 데이터바인딩 숙제 & 문자중간에 변수 넣는법
       var products = [
@@ -88,6 +93,40 @@
       //   .eq(2)
       //   .html('가격 : ' + products[2].price);
       // }
+
+      // array에 자주 쓰는 sort, map, filter 함수
+      // a,b 는 어레이의 안의 숫자 하나하나를 의미
+      // return 오른쪽이 양수면 a를 오른쪽, 음수면 b를 오른쪽
+      // 오름차순 : a-b, 내림차순 : b-a
+      var 어레이 = [7, 3, 5, 6, 20];
+      var 어레이2 = ['a', 'c', 'b'];
+
+      어레이.sort(function (a, b) {
+        return a - b;
+      });
+
+      var 새어레이 = 어레이.filter(function (a) {
+        return a < 4;
+      });
+
+      var 새어레이2 = 어레이.map(function (a) {
+        return a * 4;
+      });
+
+      어레이2.sort();
+
+      console.log(새어레이);
+      console.log(새어레이2);
+      console.log(어레이);
+      console.log(어레이2);
+
+      $('#price').on('click', function () {
+        products.sort(function (a, b) {
+          return a.price - b.price;
+        });
+        $('.row').html('');
+        데이터(products);
+      });
 
       // Ajax 1 : 개념정리 숙제
 
