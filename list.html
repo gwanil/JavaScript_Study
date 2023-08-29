@@ -76,7 +76,16 @@
     </div>
 
     <div class="container my-3">
+      <button class="btn btn-danger" id="name2">상품명정렬2</button>
+    </div>
+
+    <div class="container my-3">
       <button class="btn btn-danger" id="price2">6만원 이하 상품보기</button>
+    </div>
+
+    <div class="container my-3">
+      <input type="text" id="search" />
+      <button class="btn btn-danger" id="price3">?만원 이하 상품보기</button>
     </div>
 
     <script>
@@ -159,6 +168,19 @@
         데이터(products);
       });
 
+      // 응용1. 가나다순 정렬버튼?
+      $('#name2').on('click', function () {
+        products.sort(function (a, b) {
+          if (a.title > b.title) {
+            return 1;
+          } else {
+            return -1;
+          }
+        });
+        $('.row').html('');
+        데이터(products);
+      });
+
       $('#price2').on('click', function () {
         var newProducts = products.filter(function (a) {
           return a.price <= 60000;
@@ -166,6 +188,20 @@
         $('.row').html('');
         데이터(newProducts);
       });
+
+      // 응용2. <input>을 이용해 유저가 직접 가격을 입력해서 필터하는 기능?
+      $('#price3').on('click', function () {
+        if ($('#search').val() === products.price) {
+          var newProducts = products.filter(function (a) {
+            return a.price === $('#search').val();
+          });
+          console.log(newProducts);
+          $('.row').html('');
+          데이터(newProducts);
+        }
+      });
+
+      // 응용3. 원래 순서대로 되돌리기 버튼과 기능을 만들고 싶으면? (깊은복사, 얕은복사)
 
       // Ajax 1 : 개념정리 숙제
 
