@@ -63,7 +63,7 @@
     </div>
 
     <!-- Ajax 2 : 상품 더보기 버튼 만들기 -->
-    <div class="container">
+    <div class="container my-3">
       <button class="btn btn-danger" id="more">더보기</button>
     </div>
 
@@ -220,12 +220,26 @@
               <img src="https://via.placeholder.com/600" class="w-100" />
               <h5>${a.title}</h5>
               <p>가격 : ${a.price}</p>
+              <button class="buy">구매</button>
               </div>`;
           $('.row').append(템플릿);
         });
       }
 
       데이터(products);
+
+      // 장바구니 기능과 localStorage
+      localStorage.setItem('이름', 'kim');
+      localStorage.getItem('이름');
+      localStorage.removeItem('이름');
+      // array, object 저장하는 편법
+      var arr = [1, 2, 3];
+      var newArr = JSON.stringify(arr);
+
+      localStorage.setItem('num', newArr);
+
+      var 꺼낸거 = localStorage.getItem('num');
+      console.log(JSON.parse(꺼낸거)[0]);
 
       // var 템플릿 = `<div class="col-sm-4">
       //     <img src="https://via.placeholder.com/600" class="w-100" />
