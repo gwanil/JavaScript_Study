@@ -49,17 +49,22 @@
     <!-- Ajax 1 : 개념정리 -->
     <div class="container">
       <div class="row">
-        <div class="col-sm-4">
+        <!-- <div class="col-sm-4">
           <img src="https://via.placeholder.com/600" class="w-100" />
           <h5>Card title</h5>
           <p>가격 : 70000</p>
-        </div>
+        </div> -->
         <!-- <div class="col-sm-4">
           <img src="https://via.placeholder.com/600" class="w-100" />
           <h5>Card title</h5>
           <p>가격 : 70000</p>
         </div> -->
       </div>
+    </div>
+
+    <!-- Ajax 2 : 상품 더보기 버튼 만들기 -->
+    <div class="container">
+      <button class="btn btn-danger" id="more">더보기</button>
     </div>
     <script>
       // 데이터바인딩 숙제 & 문자중간에 변수 넣는법
@@ -85,7 +90,31 @@
       // }
 
       // Ajax 1 : 개념정리 숙제
-      $('.row').clone().appendTo('.col-sm-4');
+
+      // a = products 안에 있는 하나하나의 데이터
+      // products.forEach((a, i) => {
+      //   var 템플릿 = `<div class="col-sm-4">
+      //       <img src="https://via.placeholder.com/600" class="w-100" />
+      //       <h5>${products[i].title}</h5>
+      //       <p>가격 : ${products[i].price}</p>
+      //     </div>`;
+      //   $('.row').append(템플릿);
+      // });
+      products.forEach((a) => {
+        var 템플릿 = `<div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100" />
+            <h5>${a.title}</h5>
+            <p>가격 : ${a.price}</p>
+            </div>`;
+        $('.row').append(템플릿);
+      });
+
+      // var 템플릿 = `<div class="col-sm-4">
+      //     <img src="https://via.placeholder.com/600" class="w-100" />
+      //     <h5>${products[1].title}</h5>
+      //     <p>가격 : ${products[1].price}</p>
+      //   </div>`;
+      // $('.row').append(템플릿);
     </script>
 
     <!-- Ajax 1 : 개념정리 -->
@@ -127,6 +156,23 @@
       //   .catch(function (error) {
       //     console.log('실패함');
       //   });
+    </script>
+
+    <!-- Ajax 2 : 상품 더보기 버튼 만들기 -->
+    <script>
+      $('#more').on('click', function () {
+        $.get('https://codingapple1.github.io/js/more1.json').done((data) => {
+          console.log(data);
+          data.forEach((a, i) => {
+            var 템플릿 = `<div class="col-sm-4">
+              <img src="https://via.placeholder.com/600" class="w-100" />
+              <h5>${data[i].title}</h5>
+              <p>가격 : ${data[i].price}</p>
+              </div>`;
+            $('.row').append(템플릿);
+          });
+        });
+      });
     </script>
 
     <!-- bootstrap js 스크립트 -->
