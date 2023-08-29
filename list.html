@@ -241,6 +241,16 @@
       var 꺼낸거 = localStorage.getItem('num');
       console.log(JSON.parse(꺼낸거)[0]);
 
+      $('.buy').on('click', function () {
+        var cart = [$('.buy').siblings('p', 'h5').text()];
+        var newCart = JSON.stringify(cart);
+        // var title = [$('p').prev('h5')];
+        // var newTitle = JSON.stringify(title);
+
+        // localStorage.setItem('title', newTitle);
+        localStorage.setItem('cart', newCart);
+      });
+
       // var 템플릿 = `<div class="col-sm-4">
       //     <img src="https://via.placeholder.com/600" class="w-100" />
       //     <h5>${products[1].title}</h5>
