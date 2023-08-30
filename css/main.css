@@ -178,4 +178,5 @@ ul.list::after {
   position: sticky;
   top: 400px;
   margin-top: 200px;
+  transition: all 0.2s;
 }

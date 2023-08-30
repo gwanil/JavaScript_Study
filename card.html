@@ -37,7 +37,14 @@
         // 0 = a * 1066 + b;
         // a = -1 / 406;
         // b = 533 / 203;
+        var z = (-240 / 1000000) * 높이 + 236 / 203;
+
         $('.card-box').eq(0).css('opacity', y);
+        if (높이 <= 660) {
+          $('.card-box').eq(0).css('transform', 'none');
+        } else {
+          $('.card-box').eq(0).css('transform', `scale(${z})`);
+        }
       });
     </script>
   </body>
