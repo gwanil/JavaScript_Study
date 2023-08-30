@@ -439,6 +439,11 @@
           // console.log(e.clientX);
           // console.log(e.clientX - 시작좌표);
           눌렀냐 = false;
+          if (e.clientX - 시작좌표 < -100) {
+            $('.slide-container').css('transform', 'translateX(-100vw)');
+          } else {
+            $('.slide-container').css('transform', 'translateX(0vw)');
+          }
         });
     </script>
 
