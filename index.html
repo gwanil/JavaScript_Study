@@ -400,16 +400,47 @@
     <div style="overflow: hidden">
       <div class="slide-container">
         <div class="slide-box">
-          <img src="/img/car1.png" />
+          <img src="/img/car1.png" draggable="false" />
         </div>
         <div class="slide-box">
-          <img src="/img/car2.png" />
+          <img src="/img/car2.png" draggable="false" />
         </div>
         <div class="slide-box">
-          <img src="/img/car3.png" />
+          <img src="/img/car3.png" draggable="false" />
         </div>
       </div>
     </div>
+
+    <!-- 캐러셀에 스와이프 기능 만들기 -->
+    <script>
+      var 시작좌표 = 0;
+      var 눌렀냐 = false;
+      $('.slide-box')
+        .eq(0)
+        .on('mousedown', function (e) {
+          // console.log(e.clientX);
+          시작좌표 = e.clientX;
+          눌렀냐 = true;
+        });
+
+      $('.slide-box')
+        .eq(0)
+        .on('mousemove', function (e) {
+          // console.log(e.clientX);
+          // console.log(e.clientX - 시작좌표);
+          if (눌렀냐 == true) {
+            $('.slide-container').css('transform', `translateX(${e.clientX - 시작좌표}px)`);
+          }
+        });
+
+      $('.slide-box')
+        .eq(0)
+        .on('mouseup', function (e) {
+          // console.log(e.clientX);
+          // console.log(e.clientX - 시작좌표);
+          눌렀냐 = false;
+        });
+    </script>
 
     <button class="slide-1">1</button>
     <button class="slide-2">2</button>
