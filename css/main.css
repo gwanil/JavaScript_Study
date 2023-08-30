@@ -140,3 +140,23 @@ ul.list::after {
 .size {
   display: none;
 }
+
+/* position : sticky 활용하기 */
+.grey {
+  background-color: lightgray;
+  height: 2000px;
+  margin-top: 500px;
+}
+
+.image {
+  float: right;
+  width: 400px;
+  /* 조건부로 fixed 됨 */
+  position: sticky;
+  top: 100px;
+}
+
+.text {
+  float: left;
+  width: 300px;
+}
