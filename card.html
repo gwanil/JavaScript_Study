@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <!-- jquery 스크립트 (모든 라이브러리는 boby 태그 아래에 모아두는게 좋음 하지만 jQuery는 이상하게 설치한곳 하단에서만 문법 사용이 가능함 ) -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- 스크롤 위치에 따라 변하는 애니메이션 : Apple Music UI 만들기 -->
+    <div class="card-background">
+      <div class="card-box">
+        <img src="/img/card1.png" />
+      </div>
+      <div class="card-box">
+        <img src="/img/card2.png" />
+      </div>
+      <div class="card-box">
+        <img src="/img/card3.png" />
+      </div>
+    </div>
+
+    <script>
+      $(window).scroll(function () {
+        var 높이 = $(window).scrollTop();
+        console.log(높이);
+        // 666~1066까지 스크롤바를 내리면,
+        // 첫번째카드의 opacity 1~0으로 서서히 변경해주셈
+        var y = (-1 / 406) * 높이 + 533 / 203;
+        // 1 = a * 660 + b;
+        // 0 = a * 1066 + b;
+        // a = -1 / 406;
+        // b = 533 / 203;
+        $('.card-box').eq(0).css('opacity', y);
+      });
+    </script>
+  </body>
+</html>
