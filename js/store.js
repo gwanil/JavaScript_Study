@@ -1,7 +1,9 @@
 let products = [];
 
-$.get('/store.json').then((data) => {
+// 상품목록 가져오기
+$.get('/store.json').done((data) => {
   products = data.products;
+  console.log(data.products);
 
   data.products.forEach((a) => {
     $('.row').append(`<div class="card col-sm-3" id="card">
