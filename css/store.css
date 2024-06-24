@@ -21,4 +21,15 @@
   color: white;
 }
 
+.btn {
+  background-color: #000;
+  border: none;
+}
+
+.card-body {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
 /* end */
