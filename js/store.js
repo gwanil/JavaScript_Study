@@ -7,7 +7,7 @@ $.get('/store.json').done((data) => {
 
   data.products.forEach((a) => {
     $('.product-lis').append(`<div class="col-md-3" id="card">
-          <div class="card-body">
+          <div class="card-body" draggable="true">
             <img src="/img/${a.photo}" class="w-100" />
             <h5>${a.title}</h5>
             <h5>${a.brand}</h5>
@@ -16,8 +16,27 @@ $.get('/store.json').done((data) => {
           </div>
         </div>`);
   });
+  // =================
+  // 드래그
+  // =================
+  $('.card-body').on('dragstart', function (e) {
+    e.originalEvent.dataTransfer.setData('id', e.target.dataset.id);
+  });
+
+  $('.drag').on('dragover', function (e) {
+    e.preventDefault();
+  });
+
+  $('.drag').on('drop', function (e) {
+    let productId = e.originalEvent.dataTransfer.getData('id');
+    console.log(productId);
+    // console.log(productId);
+  });
 });
 
+// ==================
+// 검색기능
+// ==================
 $('#search').on('input', function () {
   let 검색어 = $('#search').val();
 
